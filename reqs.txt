@@ -1,0 +1,9 @@
+pandas
+scikit-learn
+numpy
+spacy
+janitor
+textblob 
+dedupe
+missingno
+great-expectations
