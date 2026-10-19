@@ -1,4 +1,5 @@
-# My Uber Rides 2016 
+# IA2-uberRides
+## My Uber Rides 2016 
 
 **data** mining, agregation and distillation 
 
@@ -14,12 +15,12 @@ Neural and Natlang **Preprocessing**
 ~~**spaCy** supports preprocessing and analysis of natural-language text. Its key features include tokenization, sentence segmentation, lemmatization, part-of-speech tagging, and named-entity recognition, which can turn raw text into structured features.~~ overkill
 
 
-**pyjanitor** (the `janitor` package) adds convenient data-cleaning operations to pandas. It helps standardize column names, remove empty or duplicate data, coalesce values, and organize cleaning steps into readable method chains.
+**pyjanitor** (the `janitor` package) **extends** convenient data-cleaning operations to pandas. It helps standardize column names, remove empty or duplicate data, coalesce values, and organize cleaning steps into readable method chains.
 
 
 **TextBlob** offers a lightweight interface for common text-processing tasks. It includes tokenization, noun-phrase extraction, part-of-speech tagging, spelling correction, and basic sentiment analysis, making it useful for straightforward text cleaning and exploration.
 
-**dedupe** identifies records that likely refer to the same real-world entity even when their fields differ slightly. It supports fuzzy matching across multiple fields, learns matching rules from labeled examples, and helps link or deduplicate imperfect datasets.
+~~**dedupe** identifies records that likely refer to the same real-world entity even when their fields differ slightly. It supports fuzzy matching across multiple fields, learns matching rules from labeled examples, and helps link or deduplicate imperfect datasets.~~
 
 **missingno** helps diagnose missing data visually. Its matrix, bar, and heatmap plots reveal the amount and patterns of missing values, helping determine whether data should be imputed, excluded, or investigated further. Think of it as a Pokédex for blank cells: it spots the MissingNo. before your dataset glitches out!
 
@@ -27,10 +28,19 @@ Neural and Natlang **Preprocessing**
 
 **Winsorizer** is a transformer (commonly provided by Feature-engine) that limits extreme numeric values by capping them at selected percentile or interquartile-range boundaries. This reduces the influence of outliers while retaining rows, and learned caps can be applied consistently to subsequent data.
 
+**splink**  is a highly scalable library for probabilistic record linkage and deduplication based on the Fellegi-Sunter model, using engines like DuckDB to process millions of records efficiently. Allows for unsupervised probabilistic matching, no labeled training data required, 
+
+
+
+**recordlinkage** Recordlinkage is a powerful library built natively on top of Pandas for linking records and deduplicating data.Supervised and unsupervised learning classifiers Flexible data blocking and indexing, Deterministic and probabilistic matching
+
+
 ## Por qué usamos estos módulos de preprocesamiento
 
 
-**scikit-learn** te tira el paro con herramientas de preprocesamiento reusables para tus flujos de machine learning. Trae transformadores para escalar variables numéricas (como el StandardScaler que sale en imagen.png, para dejar el asunto bien escaleno o a ojo de buen cubero, listo para aventarse el fit_transform como todo un alpinista), codificar valores categóricos, imputar datos faltantes y armar pipelines que aplican los mismos pasos de forma parejita en el entrenamiento y la inferencia.   
+Q tanto se puede assertain from a bigass datatable, can u solve ridesharing? we can pretend we did:
+
+**scikit-learn** El buen cubero, te tira el paro con herramientas de preprocesamiento reusables para tus flujos de machine learning. Trae **transformadores** para escalar variables numéricas (como el StandardScaler que sale en imagen.png, para dejar el asunto bien escaleno o a ojo de buen cubero, listo para aventarse el fit_transform como todo un alpinista), codificar valores categóricos, imputar datos faltantes y armar pipelines que aplican los mismos pasos de forma parejita en el entrenamiento y la inferencia.   
 PNG
 
 ~~**spaCy** te echa la mano con el preprocesamiento y análisis de texto en lenguaje natural. Sus cartas fuertes incluyen la tokenización, segmentación de oraciones, lematización, el etiquetado gramatical y el reconocimiento de entidades nombradas, que básicamente convierten puro texto a lo wey en características bien estructuradas.~~ 
@@ -38,11 +48,16 @@ PNG
 **pyjanitor** (el paquete janitor que "extiende" según imagen.png) le mete operaciones de limpieza bien prácticas a pandas. Te ayuda a estandarizar los nombres de las columnas, barrer con los datos vacíos o duplicados, fusionar valores y organizar todos tus pasos de limpieza en cadenitas de métodos bien fáciles de leer para que el código quede rechinando de limpio.   
 PNG
 
-**TextBlob** ofrece una interfaz ligerita para las tareas comunes de procesamiento de texto. Incluye tokenización, extracción de frases nominales, etiquetado gramatical, corrección de ortografía y un análisis de sentimiento básico; o sea, es la neta para cuando quieres limpiar y explorar texto sin hacerte bolas.   
+**TextBlob**   ofrece una interfaz ligerita para las tareas comunes de procesamiento de texto. Incluye tokenización, extracción de frases nominales, etiquetado gramatical, corrección de ortografía y un análisis de sentimiento básico; o sea, es la neta para cuando quieres limpiar y explorar texto sin hacerte bolas.   
 PNG
 
-**dedupe** es buenísimo para cachar registros que seguramente son la misma entidad en la vida real, aunque sus campos estén medio chuecos o diferentes. Trae soporte para fuzzy matching en varios campos, aprende reglas de coincidencia a partir de ejemplos etiquetados, y te hace el paro para vincular o quitar duplicados en datasets que nomás no son perfectos.   
-PNG
+~~**dedupe** es buenísimo para cachar registros que seguramente son la misma entidad en la vida real, aunque sus campos estén medio chuecos o diferentes. Trae soporte para fuzzy matching en varios campos, aprende reglas de coincidencia a partir de ejemplos etiquetados, y te hace el paro para vincular o quitar duplicados en datasets que nomás no son perfectos.   ~~ EOL
+
+lo interesante de dedupe es q regalaban entrenamiento no supervisado en la nube; pero ya no :no_good_man: , amenos q lo compiles tu mismo. Ahora hay q usar su servicio web mediante una API o recompilar en un ambiente virtual venv el modulo pip usando cpp. >:c
+
+**splink** 
+
+**recordlinkage**
 
 **missingno** (que puedes importar como spoopy para andar de terror, según imagen.png) te ayuda a diagnosticar los datos faltantes de forma visual. Sus gráficas de matriz, barras y mapas de calor sacan a relucir cuánto y cómo te faltan valores, ayudándote a decidir si mejor imputas los datos, los mandas a volar, o le rascas más. Piénsalo como una Pokédex para celdas en blanco: ¡detecta al MissingNo. antes de que tu dataset se bugee y se vaya al demonio!   
 PNG
@@ -52,10 +67,13 @@ PNG
 
 **Winsorizer** es un transformador (casi siempre de Feature-engine) que le pone un "hasta aquí" a los valores numéricos extremos, topándolos en los límites de percentiles o del rango intercuartílico. Esto le baja los humos a los outliers sin tener que borrar filas, y los topes que se aprenden se pueden aplicar de forma consistente a los datos que vengan después.
 
-
+reqs python >2.7 <=3.12
+reqs conda 
 otras herramientas utilizadas:
 
+341 inline suggestions githubcopilot
 Gemini pro
-conda 
-ps 5.1.26100.9711
+powershell 5.1.26100.9711
 WSL2
+git
+
