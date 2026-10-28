@@ -31,7 +31,7 @@ Neural and Natlang **Preprocessing**
 ## Por qué usamos estos módulos de preprocesamiento
 
 
-**scikit-learn** Trae **transformadores** para escalar variables numéricas (como el StandardScaler que sale en imagen.png, para dejar el asunto bien escaleno o a ojo de buen cubero, listo para aventarse el fit_transform como todo un alpinista), codificar valores categóricos, imputar datos faltantes y armar pipelines que aplican los mismos pasos de forma parejita en el entrenamiento y la inferencia.   
+**scikit-learn** Trae **transformadores** para escalar variables numéricas, codificar valores categóricos, imputar datos faltantes y armar pipelines que aplican los mismos pasos de forma parejita en el entrenamiento y la inferencia.   
 
 
 ~~**spaCy** te echa la mano con el preprocesamiento y análisis de texto en lenguaje natural. Sus cartas fuertes incluyen la tokenización, segmentación de oraciones, lematización, el etiquetado gramatical y el reconocimiento de entidades nombradas, que básicamente convierten puro texto a lo wey en características bien estructuradas.~~ 
