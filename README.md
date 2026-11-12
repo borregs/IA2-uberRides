@@ -2,6 +2,7 @@
 ## My Uber Rides 2016 
 
 **data** mining, agregation and distillation 
+<img width="1857" height="969" alt="imagen" src="https://github.com/user-attachments/assets/62249985-9b29-44c0-a06a-4759febf15fe" />
 
 Neural and Natlang **Preprocessing**
 
