@@ -2,8 +2,10 @@ pandas
 scikit-learn
 numpy
 spacy
-janitor
+streamlit
+pyjanitor
 textblob 
-dedupe
+splink
+recordlinkage
 missingno
 great-expectations
